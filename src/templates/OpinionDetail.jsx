@@ -34,7 +34,6 @@ const OpinionDetail = () => {
         })
     }, [])
 
-    // console.log(opinion);
 
     return (
         <section className='c-section-wrapin'>

@@ -14,9 +14,9 @@ export const saveOpinion = (text, useId) => {
             uid: useId,
         }
         
-            const number =  opinionsRef.doc()
-            let id = number.id
-            data.id = id
+        const number =  opinionsRef.doc()
+        let id = number.id
+        data.id = id
     
         return opinionsRef.doc(id).set(data, {merge: true})
             .then(() => {
@@ -37,7 +37,6 @@ export const fetchOpinions = () => {
                     const opinion = snapahot.data()
                     opinionsList.push(opinion)
                 })
-                // console.log(opinionsList);  // Array
                 dispatch(fetchOpinionsAction(opinionsList))
             })
     }
