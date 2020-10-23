@@ -1,5 +1,5 @@
 export const firebaseConfig = {
-    apiKey: "APIkeyが入ります",
+    apiKey: "AIzaSyDzunuau-P5gyGx2Rzop1qFDv4Wlzb5Ivg",
     authDomain: "sucds3.firebaseapp.com",
     databaseURL: "https://sucds3.firebaseio.com",
     projectId: "sucds3",

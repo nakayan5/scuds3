@@ -23,28 +23,22 @@ const useStyles = makeStyles((theme) => ({
   details: {
   },
   content: {
-    // flex: '1 0 auto',
     textAlign: 'left'
   },
-//   controls: {
-//     display: 'flex',
-//     alignItems: 'center',
-//     paddingLeft: theme.spacing(1),
-//     paddingBottom: theme.spacing(1),
-//   },
-//   playIcon: {
-//     height: 38,
-//     width: 38,
-//   },
 }));
 
-const OpinionCard = (props) =>  {
-  　const classes = useStyles();
+// propsでopinionのid, textを受けとる
+const OpinionCardofMypage = (props) =>  {
+    const classes = useStyles();
     const dispatch = useDispatch()
 
+    const editOpinion = (id) => {
+        dispatch(push('/put'));
+    };
+
     return (
-        <Card className={classes.root} onClick={() => dispatch(push('/opinion/' + props.id))}>
-            <CardMedia
+        <Card className={classes.root} >
+            <CardMedia onClick={() => dispatch(push('/opinion/' + props.id))}
                 className={classes.media}
                 image="/static/image/cards/no_image.png"
                 title="avator"
@@ -52,26 +46,20 @@ const OpinionCard = (props) =>  {
             <div className={classes.details}>
                 <CardContent className={classes.content}>
                     <Typography component="h5" variant="h5">
-                        Titleです
+                        タイトル
+                    </Typography>
+                    <Typography component="p" variant="p" onClick={editOpinion(props.id)}>
+                        編集
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary" component='p'>
                         {props.text}
                     </Typography>
                 </CardContent>
                 <div className={classes.controls}>
-                    {/* <IconButton aria-label="previous">
-                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                        <PlayArrowIcon className={classes.playIcon} />
-                    </IconButton>
-                    <IconButton aria-label="next">
-                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-                    </IconButton> */}
                 </div>
             </div>
         </Card>
     );
 }
 
-export default OpinionCard
+export default OpinionCardofMypage;
