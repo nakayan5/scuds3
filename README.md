@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## TypeError: Cannot read property 'split' of undefined
+`let id = window.location.pathname.split('/put/edit')[1];
+    if (id !== "") {
+    id = id.split('/')[1]
+}`<br />
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -16,15 +16,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     maxHeight: 90,
     marginBottom: 10,
-    // borderBottom: '1px solid black'
   },
   media: {
-      // width: 150,
       minWidth: 120, 
   },
   details: {
-    // display: 'flex',
-    // flexDirection: 'column',
   },
   content: {
     // flex: '1 0 auto',
@@ -43,40 +39,39 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const OpinionCard = (props) =>  {
-  const classes = useStyles();
+  　const classes = useStyles();
     const dispatch = useDispatch()
-//   const theme = useTheme();
 
-  return (
-    <Card className={classes.root} onClick={() => dispatch(push('/opinion/' + props.id))}>
-        <CardMedia
-            className={classes.media}
-            image="/static/image/cards/no_image.png"
-            title="avator"
-        />
-        <div className={classes.details}>
-            <CardContent className={classes.content}>
-                <Typography component="h5" variant="h5">
-                    title
-                </Typography>
-                <Typography variant="subtitle1" color="textSecondary" component='p'>
-                    {props.text}
-                </Typography>
-            </CardContent>
-            <div className={classes.controls}>
-                {/* <IconButton aria-label="previous">
-                    {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-                </IconButton>
-                <IconButton aria-label="play/pause">
-                    <PlayArrowIcon className={classes.playIcon} />
-                </IconButton>
-                <IconButton aria-label="next">
-                    {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-                </IconButton> */}
+    return (
+        <Card className={classes.root} onClick={() => dispatch(push('/opinion/' + props.id))}>
+            <CardMedia
+                className={classes.media}
+                image="/static/image/cards/no_image.png"
+                title="avator"
+            />
+            <div className={classes.details}>
+                <CardContent className={classes.content}>
+                    <Typography component="h5" variant="h5">
+                        Titleです
+                    </Typography>
+                    <Typography variant="subtitle1" color="textSecondary" component='p'>
+                        {props.text}
+                    </Typography>
+                </CardContent>
+                <div className={classes.controls}>
+                    {/* <IconButton aria-label="previous">
+                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                    </IconButton>
+                    <IconButton aria-label="play/pause">
+                        <PlayArrowIcon className={classes.playIcon} />
+                    </IconButton>
+                    <IconButton aria-label="next">
+                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                    </IconButton> */}
+                </div>
             </div>
-        </div>
-    </Card>
-  );
+        </Card>
+    );
 }
 
 export default OpinionCard
