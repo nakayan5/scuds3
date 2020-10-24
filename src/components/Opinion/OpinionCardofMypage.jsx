@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
       minWidth: 120, 
+
+      cursor: 'pointer'
+
   },
   details: {
   },
@@ -32,9 +35,11 @@ const OpinionCardofMypage = (props) =>  {
     const classes = useStyles();
     const dispatch = useDispatch()
 
+
     const editOpinion = (id) => {
         dispatch(push('/put'));
     };
+
 
     return (
         <Card className={classes.root} >
@@ -49,6 +54,7 @@ const OpinionCardofMypage = (props) =>  {
                         タイトル
                     </Typography>
                     <Typography component="p" variant="p" onClick={editOpinion(props.id)}>
+
                         編集
                     </Typography>
                     <Typography variant="subtitle1" color="textSecondary" component='p'>
