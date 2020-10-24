@@ -7,7 +7,7 @@ import HTMLReactParser from 'html-react-parser'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-     textAlign: "left"
+      textAlign: "left"
     },
   }));
 
@@ -37,9 +37,6 @@ const OpinionDetail = () => {
 
     return (
         <section className='c-section-wrapin'>
-            {/* <div>
-
-            </div> */}
             {opinion && (
                 <div className={classes.root}>
                     {returnCodeToBr(opinion.text)}
