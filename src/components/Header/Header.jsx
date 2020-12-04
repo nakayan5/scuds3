@@ -2,7 +2,6 @@ import React, {useState, useCallback} from 'react'
 import {makeStyles} from '@material-ui/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-// import logo from '../../assets/img/icons/logo.png'
 import { useSelector, useDispatch } from 'react-redux'
 import { getIsSignedIn } from '../../reducks/users/selectors'
 import {push} from 'connected-react-router'
@@ -47,10 +46,6 @@ const Header = () => {
             <AppBar position='fixed' className={classes.menuBar} >
                 <Toolbar className={classes.toolBar}> 
                     <p onClick={() => dispatch(push('/'))}>home</p>
-                    {/* <img 
-                        src={logo} alt='torahack' width='128px' 
-                        onClick={() => dispatch(push('/'))}
-                    /> */}
                     {isSignedIn && (
                         <div className={classes.iconButtons}>
                             <HeaderMenus handleDrawerToggle={handleDrawerToggle} />
