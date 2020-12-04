@@ -10,7 +10,6 @@ const Home = () => {
     const dispatch = useDispatch()
     const selector = useSelector((state) => state);
     const opinions = getOpinions(selector)
-    // console.log(opinions);
 
     useEffect(() => {
         dispatch(fetchOpinions())
@@ -18,7 +17,7 @@ const Home = () => {
 
     return (
         <div className='c-section-wrapin'>
-            <div>
+           
                 {opinions.length > 0 && (
                     opinions.map(opinion => (
                         <OpinionCard
@@ -26,8 +25,7 @@ const Home = () => {
                         />
                     ))
                 )}
-            </div>
-            {/* <PrimaryButton label='意見を投稿する' onClick={() => dispatch(push('/put'))} /> */}
+      
         </div>
     )
 }
