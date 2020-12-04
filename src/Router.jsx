@@ -14,6 +14,7 @@ const Router = () => {
             <Auth>
                 <Route exact path={"(/)?"} component={Home} />
                 <Route exact path={"/put"} component={PutOpinion} />
+                <Route exact path={"/put/edit/:id"} component={PutOpinion} />
                 <Route exact path={"/opinion/:id"} component={OpinionDetail} />
                 <Route exact path={"/mypage"} component={MyPage} />
                 <Route exact path={"/mypage/profile"} component={ChangeProfile} />

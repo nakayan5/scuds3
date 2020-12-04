@@ -3,9 +3,11 @@ import { makeStyles } from '@material-ui/styles'
 import { useSelector, useDispatch } from 'react-redux';
 import {getUserId, getUsername} from '../reducks/users/selectors'
 import {db} from '../firebase/index'
-import {OpinionCard} from '../components/Opinion/index'
+// import {OpinionCardofMypage } from '../components/Opinion/index'
+import OpinionCardofMypage from '../components/Opinion/OpinionCardofMypage'
 import {PrimaryButton} from '../components/UIkit/index'
 import {push} from 'connected-react-router'
+
 
 const useStyles = makeStyles ((theme) => ({
     box: {
@@ -44,8 +46,8 @@ const MyPage = () => {
           [name, setName] = useState(""),
           [self_introduction, setSelf_introduction] = useState(""),
           [avator, setAvator] = useState("")
-          console.log(avator);
 
+    // userのプロフィール情報を取得する
     useEffect(() => {
         db.collection('users').doc(uid).get().then(result => {
             const data = result.data();
@@ -84,6 +86,9 @@ const MyPage = () => {
                     <div className={classes.name}>
                         {name}
                     </div>
+                    <div className={classes.name}>
+                        {self_introduction}
+                    </div>
                     <div className={classes.btn}>
                         <PrimaryButton 
                             label='プロフィールを変更する' onClick={() => dispatch(push('/mypage/profile'))}
@@ -93,7 +98,7 @@ const MyPage = () => {
                 <div className={classes.article}>
                     {opinions && (
                         opinions.map(opinion =>(
-                            <OpinionCard 
+                            <OpinionCardofMypage 
                                 id={opinion.id} key={opinion.id} text={opinion.text}
                             />
                         ))

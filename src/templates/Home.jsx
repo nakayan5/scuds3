@@ -8,7 +8,7 @@ import {OpinionCard} from '../components/Opinion/index'
 
 const Home = () => {
     const dispatch = useDispatch()
-    const selector = useSelector((state) => state);　// おそらくuseSelector()はstore全体のstateを取得するメソッド
+    const selector = useSelector((state) => state);
     const opinions = getOpinions(selector)
 
     useEffect(() => {
