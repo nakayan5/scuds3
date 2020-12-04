@@ -27,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
 const OpinionCard = (props) =>  {
   　const classes = useStyles();
     const dispatch = useDispatch()
-
-
-
+    
     return (
         <Card className={classes.root} onClick={() => dispatch(push('/opinion/' + props.id))}>
             <CardMedia
